@@ -38,11 +38,19 @@ while opc != 'x':
                     if opcsn == 's':
                         os.system('cls')
                         Mtrix.imprimir_tablero_en_consola()
-                        x = input('Ingrese fila: ')
-                        y = input('Ingrese columna: ')
+                        posx = input('Ingrese fila: ')
+                        posy = input('Ingrese columna: ')
+                        print('colores valido')
+                        print('(v) -> Verde')
+                        print('(r) -> Rojo')
+                        print('(n) -> Anaranjado')
+                        print('(b) -> Azul')
+                        print('(m) -> Morado')
                         c = input('Ingrese color (inicial): ')
+                        if c != 'v' or c != 'r' or c != 'm' or c != 'b' or c != 'n':
+                            print('Color no valido')
                         os.system('cls')
-                        Mtrix.actualizar_pieza(int(x),int(y),c)
+                        Mtrix.actualizar_pieza(int(posx),int(posy),c)
                         Mtrix.imprimir_tablero_en_consola()
                     elif opcsn == 'n':
                         resp = False
@@ -54,15 +62,8 @@ while opc != 'x':
                 os.system('cls')
                 print('ingrese dato')
             break
-            print('<------------------------->')
-            x = input('Ingrese no. filas: ')
-            y = input('Ingrese no. columnas: ')
-            print('<------------------------->')
-            print('            (x)            ')
-            print('<------------------------->')
-
-
         os.system('cls')
+        Mtrix.graficar(x,y)
     elif opc == 'B':
         opc_4 = ''
         while opc_4 != 'x':
